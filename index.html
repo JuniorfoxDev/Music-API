@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+        href= 
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> 
+    <link rel="stylesheet" href="style.css">
+    <title>Music API</title>
+</head>
+<body onLoad="myFunction()">
+<div id="loader"> 
+    <div class="grid-row">
+        <div class="col">
+          
+          <ul class="loading">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          
+        </div>
+        
+      </div>
+</div>
+   <div class="app">
+       <div id="card">
+       <div class="details">
+           <div class="now-playing">
+               Playing &nbsp;&nbsp;  x OF &nbsp;  y 
+           </div>
+           <div class="track-art"></div>
+           <div class="track-name">Song Name</div>
+           <div class="track-artist">Song Artist</div>
+       </div>
+<!-- icons//////////////// -->
+<div class="buttons">
+    
+    <div class="heart padd hover-effect favorited active" onclick="favorite()">
+        <i class="far fa-heart favorite"></i>
+    </div>
+    <div class="previous-track  padd hover-effect" onclick="prevTrack()">
+        <i class="fas fa-step-backward"></i>
+    </div>
+    <div class="play-pause-btn padd hover-effect" onclick="playpauseTrack()">
+        <i class="far fa-play-circle"></i>
+    </div>
+    <div class="next-track padd hover-effect"  onclick="nextTrack()">
+        <i class="fas fa-step-forward"></i>
+    </div>
+    <div class="track-link padd hover-effect" onclick="Visit()">
+        <i class="fas fa-external-link-alt"></i>
+    </div>
+</div>
+<!-- time -->
+<div class="slider-container">
+    <div class="current-time">
+        00:00
+    </div>
+    <input type="range" value="0" min="1" max="100" class="container-seek" onchange="seekTo()">
+    <div class="total-time">00:00</div>
+</div>
+</div>
+   </div>
+   <script src="myApp.js"></script>
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBLkxSX_-aSXa9M9y7qCduwErCPqxaxXVw",
+    authDomain: "mymusicapi-feda7.firebaseapp.com",
+    projectId: "mymusicapi-feda7",
+    storageBucket: "mymusicapi-feda7.appspot.com",
+    messagingSenderId: "796120557049",
+    appId: "1:796120557049:web:dd5ab0e1406d2ba86f4928",
+    measurementId: "G-K12KLF4L05"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+</body>
+</html>
